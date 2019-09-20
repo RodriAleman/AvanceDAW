@@ -12,40 +12,21 @@ firebase.initializeApp(firebaseConfig);
 function Mostrar(){
     var database = firebase.database();
     var ref = database.ref('Quizzes');
+    var urlPortions = window.location.href.split('/');
+    urlPortions.pop();
+    var targetUrl = urlPortions.join('/');
 
-    ref.on('value', gotData, errData);
-
-    // ref.once('value')
-    // .then(function(querySnapshot) {
-    //     querySnapshot.forEach(function(doc) {
-    //         // doc.data() is never undefined for query doc snapshots
-    //         console.log(doc.val());
-    //     });
-    // })
-}
-
-var conta = 0;
-function gotData(data){
-    //console.log(data.val());
-    var names = data.val();
-    var keys = Object.keys(names);
-    // console.log(keys);
-    for (var i = 0; i < keys.length; i++){
-        var k = keys[i];
-        var nombre = names[k].nombre;
-        console.log(nombre);
-        var li = document.createElement("button");
-        texto = document.createTextNode("Quiz " + nombre);
-        li.setAttribute("class", "btn btn-primary btn-lg");
-        li.appendChild(texto);
-        li.setAttribute("id","elemento_"+conta);
-		conta++;
-        document.getElementById("namelist").appendChild(li);
-
-        // document.getElementById("demo").innerHTML = pregunta + respuesta1 + respuesta2 + respuesta3;
-    }
-}
-
-function errData(err){
-    console.log("Error");
+    ref.once('value')
+    .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            var listDiv = document.getElementById("namelist");
+            var li = document.createElement("button");
+            texto = document.createTextNode("Quiz " + doc.val().nombre);
+            li.setAttribute("class", "btn btn-primary btn-lg");
+            li.appendChild(texto);
+            li.setAttribute("id", doc.key);
+            li.setAttribute("onclick", "window.open('" + targetUrl + "/HacerQuiz.html?quizId=" + doc.key + "');");
+            listDiv.appendChild(li);
+        });
+    })
 }

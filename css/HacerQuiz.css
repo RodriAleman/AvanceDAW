@@ -24,12 +24,14 @@ table, th, td {
 }
 
 #first{
+    padding-top: 20px;
+    padding-bottom: 20px;
     background-color: rgba(0, 0, 0, 0.472);
     border-radius: 10px;
-    
+    text-align: center;
 }
 
-h2{
+h1, h2{
     font-weight: bold;
     color: white;
     padding: 10px;
