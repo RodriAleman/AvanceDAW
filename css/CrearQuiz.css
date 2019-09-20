@@ -9,6 +9,12 @@ html, body{
     background-attachment: fixed;
 }
 
+nav.navbar{
+    background-color: rgb(148, 204, 253);
+    font-size: 18px;
+    border: none;
+}
+
 form{
     text-align: center;
 }

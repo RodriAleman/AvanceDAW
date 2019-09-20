@@ -1,0 +1,5 @@
+NOTA: El grupo es de 6 integrantes porque los demás grupos están completos con sus respectivos 5 integrantes.
+
+En crear quiz debe siempre apretar "crear" antes de agregar las preguntas.
+
+Link Github: https://github.com/RodriAleman/AvanceDAW
