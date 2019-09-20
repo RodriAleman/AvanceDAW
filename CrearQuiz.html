@@ -5,30 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
-    <title>Document</title>
+    <title>Creando quiz</title>
     <script src="js/CrearQuiz.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/CrearQuiz.css">
+    <link href="https://fonts.googleapis.com/css?family=Manjari&display=swap" rel="stylesheet">
 </head>
 <body>
-    <p>Nombre del quiz:</p>
-    <input type="text" id="nombre">
-    <input type="button" value="Crear quiz" onclick="Crear()">
-    <hr>
-    <br>
-    <div id="div-pregunta">
-        <p>Escribe tu pregunta:</p>
-        <input type="text" id="pre1">
-        <br>
-        <input type="text" id="res1" placeholder="Escriba su primera respuesta">
-        <br>
-        <input type="text" id="res2" placeholder="Escriba su segunda respuesta">
-        <br>
-        <input type="text" id="res3" placeholder="Escriba su tercera respuesta">
-        <br>
-        <input type="submit" value="Agregar" id="submit_button" onclick="pregunta()">
-        <div id="demo"></div>
+    <div id="div-pregunta" class="container">
+        <form class="form-horizontal">
+            <div id="first">
+                <h2>Nombra tu quiz:</h2>
+                <div class="form-group">
+                    <div class="col-xs-8 col-xs-offset-2">
+                        <input type="text" class="form-control" id="nombre" placeholder="Nombre del quiz">
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary" onclick="Crear()">Crear quiz</button>
+                <br><br>
+            </div>
+            <hr>
+            <div id="first">
+                <h2>Escribe tu pregunta:</h2>
+            <div class="form-group">
+                <div class="col-xs-8 col-xs-offset-2">
+                    <input type="text" class="form-control" id="pre1" placeholder="Haz click para escribir tu pregunta">
+                </div>
+                <div class="col-xs-8 col-xs-offset-2">
+                    <input type="text" class="form-control" id="res1" placeholder="Añade respuesta 1 (obligatorio)" required>
+                </div>
+                <div class="col-xs-8 col-xs-offset-2">
+                    <input type="text" class="form-control" id="res2" placeholder="Añade respuesta 2 (obligatorio)" required>
+                </div>
+                <div class="col-xs-8 col-xs-offset-2">
+                    <input type="text" class="form-control" id="res3" placeholder="Añade respuesta 3">
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="pregunta()">Agregar</button>
+            <!-- <button type="button" class="btn btn-info" onclick="leer()">Leer datos</button> -->
+            <br><br>
+            <div>
+                <table id="preguntasMostrar" class ='table table-bordered'>
+                </table>
+            </div>
+            <br><br>
+            </div>
+        </form>  
     </div>
-    
-
+    <br>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script> 
     <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-database.js"></script>
 </body>

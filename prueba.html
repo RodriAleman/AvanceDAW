@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-messaging.js"></script>
+    <script src="js/conexion.js"></script>
+
+</head>
+<body>
+    <div class="page-container flex-rc">
+        <form action="">
+          <input id="name" class="input" type="text" value="" placeholder="Nombre" required /><br />
+          <input id="email" class="input" type="email" value="" placeholder="Correo" required /><br />
+        <input id="phone" class="input" type="number" value="" maxlength="10" placeholder="Teléfono" required /><br />
+        <button id="submit_button" type="submit" >Enviar</button>
+        </form>
+        
+    </div>
+
+    <script>
+        var firebaseConfig = {
+        apiKey: "AIzaSyCP10PmQL2ZIWoxlk4J92gszr11sWEcja4",
+        authDomain: "creando-test.firebaseapp.com",
+        databaseURL: "https://creando-test.firebaseio.com",
+        projectId: "creando-test",
+        storageBucket: "",
+        messagingSenderId: "615733079180",
+        appId: "1:615733079180:web:82b8ca7a13c461bf665fa9"
+        };
+    </script>
+</body>
+</html>
+
